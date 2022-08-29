@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Composed</title>
+    <script defer src="./src/composed.js"></script>
+  </head>
+  <body>
+    <div id="parent-element">
+      <butler-button></butler-button>
+    </div>
+
+    <script>
+      window.onload = () => {
+        const parentElement = document.querySelector("#parent-element");
+        parentElement.addEventListener("whisper", (event) => {
+          alert(event.detail.message);
+        });
+
+        parentElement.addEventListener("yell", (event) => {
+          alert(event.detail.message);
+        });
+      };
+    </script>
+  </body>
+</html>
