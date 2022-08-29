@@ -6,27 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Custom Form</title>
     <script defer src="./src/custom-form.js"></script>
+    <style>
+      #custom-form fieldset {
+        display: flex;
+        flex-direction: column;
+        margin: 100px auto;
+        max-width: 200px;
+        gap: 20px;
+      }
+      #container {
+        text-align: center;
+      }
+      #container > textarea {
+        width: 600px;
+        height: 400px;
+        resize: none;
+      }
+    </style>
   </head>
   <body>
     <form id="custom-form" is="custom-form">
-      <input type="text" name="text" />
-      <input type="number" name="number" />
-      <input type="date" name="date" />
-      <input type="checkbox" name="checkbox" />
-      <textarea name="textarea"></textarea>
-      <select name="option">
-        <option>Option 1</option>
-        <option>Option 2</option>
-        <option>Option 3</option>
-      </select>
+      <fieldset>
+        <legend>Butler's Custom Form</legend>
+        <input type="text" name="text" />
+        <input type="number" name="number" />
+        <input type="date" name="date" />
+        <input type="checkbox" name="checkbox" />
+        <textarea name="textarea"></textarea>
+        <select name="option">
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+        </select>
+
+        <button>Serialize</button>
+      </fieldset>
     </form>
+
+    <div id="container">
+      <textarea id="textarea" readonly></textarea>
+    </div>
 
     <script>
       window.onload = () => {
         const form = document.querySelector("#custom-form");
+        const textarea = document.querySelector("#textarea");
+
         form.addEventListener("submit", (event) => {
           event.preventDefault();
-          console.table(form.serialize());
+
+          textarea.value = JSON.stringify(form.serialize(), null, 2);
         });
       };
     </script>
