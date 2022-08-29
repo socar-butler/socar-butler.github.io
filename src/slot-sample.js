@@ -13,8 +13,7 @@ customElements.define(
         </style>
 
         <div id="container">
-          <slot name="first-slot"></slot>
-          <slot name="second-slot"></slot>
+          <slot></slot>
         </div>
       `;
     }
