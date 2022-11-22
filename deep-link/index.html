@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deep Link Generator</title>
+    <script defer src="./deep-link.js"></script>
+    <link rel="stylesheet" href="deep-link.css" />
+  </head>
+  <body>
+    <h1>Deep Link Generator</h1>
+
+    <section id="input" class="v-flex common-gap">
+      <h2>Input</h2>
+      <form id="form">
+        <fieldset class="v-flex common-gap">
+          <label class="v-flex">
+            <span>Test env subdomain</span>
+            <input name="test-env-subdomain" />
+          </label>
+
+          <label class="v-flex flex">
+            <span>Path name *</span>
+            <input name="pathname" class="flex" required />
+          </label>
+
+          <input type="submit" value="Generate" />
+        </fieldset>
+      </form>
+    </section>
+
+    <section id="result" class="v-flex common-gap">
+      <h2>Result</h2>
+      <form>
+        <fieldset class="v-flex">
+          <textarea id="result" class="flex" readonly></textarea>
+          <button type="button" id="copy">Copy</button>
+        </fieldset>
+      </form>
+    </section>
+  </body>
+</html>
