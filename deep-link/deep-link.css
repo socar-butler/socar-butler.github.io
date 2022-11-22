@@ -1,3 +1,6 @@
+:root {
+  font-size: 14px;
+}
 html,
 body {
   display: flex;
@@ -5,6 +8,7 @@ body {
   justify-content: center;
   align-items: center;
   font-family: system-ui;
+  color: #666;
 }
 .h-flex {
   display: flex;
